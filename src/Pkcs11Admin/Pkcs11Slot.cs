@@ -461,7 +461,7 @@ namespace Net.Pkcs11Admin
                 {
                     // Read attributes required for sane object presentation
                     List<ulong> attributes = new List<ulong>();
-                    attributes.Add((ulong)CKA.CKA_PRIVATE);
+                    //attributes.Add((ulong)CKA.CKA_PRIVATE);
                     attributes.Add((ulong)CKA.CKA_LABEL);
                     attributes.Add((ulong)CKA.CKA_APPLICATION);
 
@@ -480,7 +480,7 @@ namespace Net.Pkcs11Admin
                     // Construct info object
                     Pkcs11DataObjectInfo info = new Pkcs11DataObjectInfo(foundObject, configuredAttributes, storageSize)
                     {
-                        CkaPrivate = requiredAttributes[0].GetValueAsBool(),
+                        //CkaPrivate = requiredAttributes[0].GetValueAsBool(),
                         CkaLabel = requiredAttributes[1].GetValueAsString(),
                         CkaApplication = requiredAttributes[2].GetValueAsString(),
                         StorageSize = storageSize
@@ -529,15 +529,44 @@ namespace Net.Pkcs11Admin
                     // Read object storage size
                     ulong? storageSize = ReadObjectSize(session, foundObject);
 
-                    // Construct info object
-                    Pkcs11CertificateInfo info = new Pkcs11CertificateInfo(foundObject, configuredAttributes, storageSize)
+                    // Test if private value is available
+                    bool isPrivateAvailable = false;
+                    try
                     {
-                        CkaPrivate = requiredAttributes[0].GetValueAsBool(),
-                        CkaCertificateType = requiredAttributes[1].GetValueAsUlong(),
-                        CkaLabel = requiredAttributes[2].GetValueAsString(),
-                        CkaId = requiredAttributes[3].GetValueAsByteArray(),
-                        CkaValue = requiredAttributes[4].GetValueAsByteArray()
-                    };
+                        bool valuePrivate = requiredAttributes[0].GetValueAsBool();
+                        isPrivateAvailable = true;
+                    }
+                    catch (Exception)
+                    {
+                        // Ignore exception 
+                    }
+
+                    // Construct info object
+                    Pkcs11CertificateInfo info = null;
+                    if (isPrivateAvailable)
+                    {
+                        // Try to get certificate fields. CkaPrivate may not be available.
+                        info = new Pkcs11CertificateInfo(foundObject, configuredAttributes, storageSize)
+                        {
+                            CkaPrivate = requiredAttributes[0].GetValueAsBool(),
+                            CkaCertificateType = requiredAttributes[1].GetValueAsUlong(),
+                            CkaLabel = requiredAttributes[2].GetValueAsString(),
+                            CkaId = requiredAttributes[3].GetValueAsByteArray(),
+                            CkaValue = requiredAttributes[4].GetValueAsByteArray()
+                        };
+                    } else {
+                        // Try without CkaPrivate - presume false if not available
+                        // Our PKCS #11 is a bit inconsistent in reporting this value. Probably should
+                        // publish this attribute when CkaPrivate = false. But we don't always.
+                        info = new Pkcs11CertificateInfo(foundObject, configuredAttributes, storageSize)
+                        {
+                            CkaPrivate = false,
+                            CkaCertificateType = requiredAttributes[1].GetValueAsUlong(),
+                            CkaLabel = requiredAttributes[2].GetValueAsString(),
+                            CkaId = requiredAttributes[3].GetValueAsByteArray(),
+                            CkaValue = requiredAttributes[4].GetValueAsByteArray()
+                        };
+                    }
 
                     infos.Add(info);
                 }
@@ -581,17 +610,44 @@ namespace Net.Pkcs11Admin
                     // Read object storage size
                     ulong? storageSize = ReadObjectSize(session, foundObject);
 
-                    // Construct info object
-                    Pkcs11KeyInfo info = new Pkcs11KeyInfo(foundObject, configuredAttributes, storageSize)
+                    // 
+                    // PF: Changes to cope with fact CKA_LABEL may not end up as an attribute of the Private Key.
+                    //     Java P12 Import code is not setting this attribute - though it should technically.
+                    //     
+                    string label = null;
+                    try
                     {
-                        CkaPrivate = requiredAttributes[0].GetValueAsBool(),
-                        CkaClass = (ulong)objectClass,
-                        CkaKeyType = requiredAttributes[1].GetValueAsUlong(),
-                        CkaLabel = requiredAttributes[2].GetValueAsString(),
-                        CkaId = requiredAttributes[3].GetValueAsByteArray()
-                    };
+                        label = requiredAttributes[2].GetValueAsString();
+                    } catch (Exception) {
+                        // Ignore exception - label will be null
+                    }
 
-                    infos.Add(info);
+                    if (label != null)
+                    {
+                        // Construct info object using CKA_LABEL
+                        Pkcs11KeyInfo info = new Pkcs11KeyInfo(foundObject, configuredAttributes, storageSize)
+                        {
+                            CkaPrivate = requiredAttributes[0].GetValueAsBool(),
+                            CkaClass = (ulong)objectClass,
+                            CkaKeyType = requiredAttributes[1].GetValueAsUlong(),
+                            CkaLabel = requiredAttributes[2].GetValueAsString(),
+                            CkaId = requiredAttributes[3].GetValueAsByteArray()
+                        };
+
+                        infos.Add(info);
+                    } else
+                    {
+                        // Construct info object without CKA_LABEL
+                        Pkcs11KeyInfo info = new Pkcs11KeyInfo(foundObject, configuredAttributes, storageSize)
+                        {
+                            CkaPrivate = requiredAttributes[0].GetValueAsBool(),
+                            CkaClass = (ulong)objectClass,
+                            CkaKeyType = requiredAttributes[1].GetValueAsUlong(),
+                            CkaId = requiredAttributes[3].GetValueAsByteArray()
+                        };
+
+                        infos.Add(info);
+                    }        
                 }
             }
 

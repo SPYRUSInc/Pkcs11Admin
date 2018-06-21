@@ -252,6 +252,7 @@ namespace Net.Pkcs11Admin.WinForms
                 MenuItemInitPin.Enabled = _selectedSlot.SessionInfo.SoCanSetUserPin;
                 MenuItemUserInit.Enabled = _selectedSlot.SessionInfo.SoCanSetUserPin;
                 MenuItemProtectedUserInit.Enabled = _selectedSlot.SessionInfo.SoCanSetUserPinProtected;
+                MenuItemImportPKCS12.Enabled = _selectedSlot.SessionInfo.CanLogout;
             }
         }
 
@@ -1173,9 +1174,18 @@ namespace Net.Pkcs11Admin.WinForms
                 await ReloadFormAfter(_selectedSlot.Reload);
         }
 
-        private void CtxMenuItemKeysImport_Click(object sender, EventArgs e)
+        private async void CtxMenuItemKeysImport_Click(object sender, EventArgs e)
         {
-            WinFormsUtils.ShowInfo(this, "Selected operation has not been implemented yet");
+            if (_selectedSlot.SessionInfo.CanLogout)
+            {
+                using (PKCS12ImportDialog p12Dialog = new PKCS12ImportDialog(_selectedSlot))
+                    p12Dialog.ShowDialog();
+                await ReloadFormAfter(_selectedSlot.Reload);
+            }
+            else
+            {
+                MessageBox.Show("You must login before trying to import a PKCS#12 file.", "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void CtxMenuItemKeysExport_Click(object sender, EventArgs e)
@@ -1892,5 +1902,30 @@ namespace Net.Pkcs11Admin.WinForms
         }
 
         #endregion
+
+
+        private async void CtxMenuItemDataObjectsRefresh_Click(object sender, EventArgs e)
+        {
+            await ReloadFormAfter(_selectedSlot.Reload);
+        }
+
+        private async void CtxMenuItemCertificatesRefresh_Click(object sender, EventArgs e)
+        {
+            await ReloadFormAfter(_selectedSlot.Reload);
+        }
+
+        private async void CtxMenuItemKeysRefresh_Click(object sender, EventArgs e)
+        {
+            await ReloadFormAfter(_selectedSlot.Reload);
+        }
+
+        private async void MenuItemImportPKCS12_Click(object sender, EventArgs e)
+        {
+            using (PKCS12ImportDialog p12Dialog = new PKCS12ImportDialog(_selectedSlot))
+                p12Dialog.ShowDialog();
+            await ReloadFormAfter(_selectedSlot.Reload);
+        }
+
     }
+
 }

@@ -110,23 +110,27 @@ namespace Net.Pkcs11Admin.WinForms
             this.MainFormPanel = new System.Windows.Forms.Panel();
             this.MainFormTabControl = new System.Windows.Forms.TabControl();
             this.TabPageBasicInfo = new System.Windows.Forms.TabPage();
+            this.ListViewBasicInfo = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
             this.ContextMenuBasicInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CtxMenuItemBasicInfoPkcs11Uri = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemBasicInfoCsvAll = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemBasicInfoCsvSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelBasicInfo = new System.Windows.Forms.Label();
             this.TabPageMechanisms = new System.Windows.Forms.TabPage();
+            this.ListViewMechanisms = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
             this.ContextMenuMechanisms = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CtxMenuItemMechanismsCsvAll = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemMechanismsCsvSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelMechanisms = new System.Windows.Forms.Label();
             this.TabPageHwFeatures = new System.Windows.Forms.TabPage();
+            this.ListViewHwFeatures = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
             this.ContextMenuHwFeatures = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CtxMenuItemHwFeaturesEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemHwFeaturesCsvAll = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemHwFeaturesCsvSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelHwFeatures = new System.Windows.Forms.Label();
             this.TabPageDataObjects = new System.Windows.Forms.TabPage();
+            this.ListViewDataObjects = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
             this.ContextMenuDataObjects = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CtxMenuItemDataObjectsView = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemDataObjectsNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,8 +141,10 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemDataObjectsPkcs11Uri = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemDataObjectsCsvAll = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemDataObjectsCsvSelected = new System.Windows.Forms.ToolStripMenuItem();
+            this.CtxMenuItemDataObjectsRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelDataObjects = new System.Windows.Forms.Label();
             this.TabPageCertificates = new System.Windows.Forms.TabPage();
+            this.ListViewCertificates = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
             this.ContextMenuCertificates = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CtxMenuItemCertificatesView = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemCertificatesEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -149,8 +155,10 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemCertificatesCsvAll = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemCertificatesCsvSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemCertificatesCheckRoca = new System.Windows.Forms.ToolStripMenuItem();
+            this.CtxMenuItemCertificatesRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelCertificates = new System.Windows.Forms.Label();
             this.TabPageKeys = new System.Windows.Forms.TabPage();
+            this.ListViewKeys = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
             this.ContextMenuKeys = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CtxMenuItemKeysNew = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemKeysEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,22 +170,18 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemKeysPkcs11Uri = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemKeysCsvAll = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemKeysCsvSelected = new System.Windows.Forms.ToolStripMenuItem();
+            this.CtxMenuItemKeysCheckRoca = new System.Windows.Forms.ToolStripMenuItem();
+            this.CtxMenuItemKeysRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelKeys = new System.Windows.Forms.Label();
             this.TabPageDomainParams = new System.Windows.Forms.TabPage();
+            this.ListViewDomainParams = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
             this.ContextMenuDomainParams = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CtxMenuItemDomainParamsEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemDomainParamsDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemDomainParamsCsvAll = new System.Windows.Forms.ToolStripMenuItem();
             this.CtxMenuItemDomainParamsCsvSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelDomainParams = new System.Windows.Forms.Label();
-            this.ListViewBasicInfo = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
-            this.ListViewMechanisms = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
-            this.ListViewHwFeatures = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
-            this.ListViewDataObjects = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
-            this.ListViewCertificates = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
-            this.ListViewKeys = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
-            this.ListViewDomainParams = new Net.Pkcs11Admin.WinForms.Controls.EnhancedListView();
-            this.CtxMenuItemKeysCheckRoca = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemImportPKCS12 = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormStatusStrip.SuspendLayout();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormPanel.SuspendLayout();
@@ -231,7 +235,7 @@ namespace Net.Pkcs11Admin.WinForms
             // 
             this.MenuItemLoadLibrary.Name = "MenuItemLoadLibrary";
             this.MenuItemLoadLibrary.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.MenuItemLoadLibrary.Size = new System.Drawing.Size(241, 22);
+            this.MenuItemLoadLibrary.Size = new System.Drawing.Size(242, 22);
             this.MenuItemLoadLibrary.Text = "Load PKCS#11 library...";
             this.MenuItemLoadLibrary.Click += new System.EventHandler(this.MenuItemLoadLibrary_Click);
             // 
@@ -239,20 +243,20 @@ namespace Net.Pkcs11Admin.WinForms
             // 
             this.MenuItemOpenLogFile.Name = "MenuItemOpenLogFile";
             this.MenuItemOpenLogFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.MenuItemOpenLogFile.Size = new System.Drawing.Size(241, 22);
+            this.MenuItemOpenLogFile.Size = new System.Drawing.Size(242, 22);
             this.MenuItemOpenLogFile.Text = "Open log file...";
             this.MenuItemOpenLogFile.Click += new System.EventHandler(this.MenuItemOpenLogFile_Click);
             // 
             // MenuItemApplicationSeparator1
             // 
             this.MenuItemApplicationSeparator1.Name = "MenuItemApplicationSeparator1";
-            this.MenuItemApplicationSeparator1.Size = new System.Drawing.Size(238, 6);
+            this.MenuItemApplicationSeparator1.Size = new System.Drawing.Size(239, 6);
             // 
             // MenuItemReloadLibrary
             // 
             this.MenuItemReloadLibrary.Name = "MenuItemReloadLibrary";
             this.MenuItemReloadLibrary.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
-            this.MenuItemReloadLibrary.Size = new System.Drawing.Size(241, 22);
+            this.MenuItemReloadLibrary.Size = new System.Drawing.Size(242, 22);
             this.MenuItemReloadLibrary.Text = "Reload PKCS#11 library";
             this.MenuItemReloadLibrary.Click += new System.EventHandler(this.MenuItemReloadLibrary_Click);
             // 
@@ -260,20 +264,20 @@ namespace Net.Pkcs11Admin.WinForms
             // 
             this.MenuItemRefreshSlot.Name = "MenuItemRefreshSlot";
             this.MenuItemRefreshSlot.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.MenuItemRefreshSlot.Size = new System.Drawing.Size(241, 22);
+            this.MenuItemRefreshSlot.Size = new System.Drawing.Size(242, 22);
             this.MenuItemRefreshSlot.Text = "Refresh selected slot";
             this.MenuItemRefreshSlot.Click += new System.EventHandler(this.MenuItemRefreshSlot_Click);
             // 
             // MenuItemApplicationSeparator2
             // 
             this.MenuItemApplicationSeparator2.Name = "MenuItemApplicationSeparator2";
-            this.MenuItemApplicationSeparator2.Size = new System.Drawing.Size(238, 6);
+            this.MenuItemApplicationSeparator2.Size = new System.Drawing.Size(239, 6);
             // 
             // MenuItemExit
             // 
             this.MenuItemExit.Name = "MenuItemExit";
             this.MenuItemExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.MenuItemExit.Size = new System.Drawing.Size(241, 22);
+            this.MenuItemExit.Size = new System.Drawing.Size(242, 22);
             this.MenuItemExit.Text = "Exit";
             this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
@@ -330,7 +334,7 @@ namespace Net.Pkcs11Admin.WinForms
             this.MenuItemInitToken,
             this.MenuItemInitPin});
             this.MenuItemToken.Name = "MenuItemToken";
-            this.MenuItemToken.Size = new System.Drawing.Size(51, 20);
+            this.MenuItemToken.Size = new System.Drawing.Size(52, 20);
             this.MenuItemToken.Text = "Token";
             // 
             // MenuItemLogin
@@ -490,7 +494,7 @@ namespace Net.Pkcs11Admin.WinForms
             this.MenuItemObjectNewCsr,
             this.MenuItemObjectNewCert});
             this.MenuItemObjectNew.Name = "MenuItemObjectNew";
-            this.MenuItemObjectNew.Size = new System.Drawing.Size(110, 22);
+            this.MenuItemObjectNew.Size = new System.Drawing.Size(152, 22);
             this.MenuItemObjectNew.Text = "New";
             // 
             // MenuItemObjectNewData
@@ -524,14 +528,14 @@ namespace Net.Pkcs11Admin.WinForms
             // MenuItemObjectEdit
             // 
             this.MenuItemObjectEdit.Name = "MenuItemObjectEdit";
-            this.MenuItemObjectEdit.Size = new System.Drawing.Size(110, 22);
+            this.MenuItemObjectEdit.Size = new System.Drawing.Size(152, 22);
             this.MenuItemObjectEdit.Text = "Edit...";
             this.MenuItemObjectEdit.Click += new System.EventHandler(this.MenuItemObjectEdit_Click);
             // 
             // MenuItemObjectDelete
             // 
             this.MenuItemObjectDelete.Name = "MenuItemObjectDelete";
-            this.MenuItemObjectDelete.Size = new System.Drawing.Size(110, 22);
+            this.MenuItemObjectDelete.Size = new System.Drawing.Size(152, 22);
             this.MenuItemObjectDelete.Text = "Delete";
             this.MenuItemObjectDelete.Click += new System.EventHandler(this.MenuItemObjectDelete_Click);
             // 
@@ -541,7 +545,7 @@ namespace Net.Pkcs11Admin.WinForms
             this.MenuItemObjectViewData,
             this.MenuItemObjectViewCert});
             this.MenuItemObjectView.Name = "MenuItemObjectView";
-            this.MenuItemObjectView.Size = new System.Drawing.Size(110, 22);
+            this.MenuItemObjectView.Size = new System.Drawing.Size(152, 22);
             this.MenuItemObjectView.Text = "View";
             // 
             // MenuItemObjectViewData
@@ -565,7 +569,7 @@ namespace Net.Pkcs11Admin.WinForms
             this.MenuItemObjectImportCert,
             this.MenuItemObjectImportKey});
             this.MenuItemObjectImport.Name = "MenuItemObjectImport";
-            this.MenuItemObjectImport.Size = new System.Drawing.Size(110, 22);
+            this.MenuItemObjectImport.Size = new System.Drawing.Size(152, 22);
             this.MenuItemObjectImport.Text = "Import";
             // 
             // MenuItemObjectImportData
@@ -596,7 +600,7 @@ namespace Net.Pkcs11Admin.WinForms
             this.MenuItemObjectExportCert,
             this.MenuItemObjectExportKey});
             this.MenuItemObjectExport.Name = "MenuItemObjectExport";
-            this.MenuItemObjectExport.Size = new System.Drawing.Size(110, 22);
+            this.MenuItemObjectExport.Size = new System.Drawing.Size(152, 22);
             this.MenuItemObjectExport.Text = "Export";
             // 
             // MenuItemObjectExportData
@@ -624,9 +628,10 @@ namespace Net.Pkcs11Admin.WinForms
             // 
             this.MenuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemCsvExport,
-            this.MenuItemPkcs11Uri});
+            this.MenuItemPkcs11Uri,
+            this.MenuItemImportPKCS12});
             this.MenuItemTools.Name = "MenuItemTools";
-            this.MenuItemTools.Size = new System.Drawing.Size(47, 20);
+            this.MenuItemTools.Size = new System.Drawing.Size(48, 20);
             this.MenuItemTools.Text = "Tools";
             // 
             // MenuItemCsvExport
@@ -635,7 +640,7 @@ namespace Net.Pkcs11Admin.WinForms
             this.MenuItemCsvExportAll,
             this.MenuItemCsvExportSelected});
             this.MenuItemCsvExport.Name = "MenuItemCsvExport";
-            this.MenuItemCsvExport.Size = new System.Drawing.Size(171, 22);
+            this.MenuItemCsvExport.Size = new System.Drawing.Size(172, 22);
             this.MenuItemCsvExport.Text = "Export to CSV";
             // 
             // MenuItemCsvExportAll
@@ -659,7 +664,7 @@ namespace Net.Pkcs11Admin.WinForms
             this.MenuItemPkcs11UriWithObject,
             this.MenuItemPkcs11UriWithoutObject});
             this.MenuItemPkcs11Uri.Name = "MenuItemPkcs11Uri";
-            this.MenuItemPkcs11Uri.Size = new System.Drawing.Size(171, 22);
+            this.MenuItemPkcs11Uri.Size = new System.Drawing.Size(172, 22);
             this.MenuItemPkcs11Uri.Text = "Build PKCS#11 URI";
             // 
             // MenuItemPkcs11UriEmpty
@@ -724,6 +729,22 @@ namespace Net.Pkcs11Admin.WinForms
             this.TabPageBasicInfo.Text = "Basic info";
             this.TabPageBasicInfo.UseVisualStyleBackColor = true;
             // 
+            // ListViewBasicInfo
+            // 
+            this.ListViewBasicInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewBasicInfo.ContextMenuStrip = this.ContextMenuBasicInfo;
+            this.ListViewBasicInfo.FullRowSelect = true;
+            this.ListViewBasicInfo.HideSelection = false;
+            this.ListViewBasicInfo.Location = new System.Drawing.Point(13, 26);
+            this.ListViewBasicInfo.Name = "ListViewBasicInfo";
+            this.ListViewBasicInfo.Size = new System.Drawing.Size(724, 324);
+            this.ListViewBasicInfo.Sortable = true;
+            this.ListViewBasicInfo.TabIndex = 1;
+            this.ListViewBasicInfo.UseCompatibleStateImageBehavior = false;
+            this.ListViewBasicInfo.View = System.Windows.Forms.View.Details;
+            // 
             // ContextMenuBasicInfo
             // 
             this.ContextMenuBasicInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -777,6 +798,22 @@ namespace Net.Pkcs11Admin.WinForms
             this.TabPageMechanisms.Text = "Mechanisms";
             this.TabPageMechanisms.UseVisualStyleBackColor = true;
             // 
+            // ListViewMechanisms
+            // 
+            this.ListViewMechanisms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewMechanisms.ContextMenuStrip = this.ContextMenuMechanisms;
+            this.ListViewMechanisms.FullRowSelect = true;
+            this.ListViewMechanisms.HideSelection = false;
+            this.ListViewMechanisms.Location = new System.Drawing.Point(13, 26);
+            this.ListViewMechanisms.Name = "ListViewMechanisms";
+            this.ListViewMechanisms.Size = new System.Drawing.Size(724, 324);
+            this.ListViewMechanisms.Sortable = true;
+            this.ListViewMechanisms.TabIndex = 0;
+            this.ListViewMechanisms.UseCompatibleStateImageBehavior = false;
+            this.ListViewMechanisms.View = System.Windows.Forms.View.Details;
+            // 
             // ContextMenuMechanisms
             // 
             this.ContextMenuMechanisms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -821,6 +858,22 @@ namespace Net.Pkcs11Admin.WinForms
             this.TabPageHwFeatures.TabIndex = 1;
             this.TabPageHwFeatures.Text = "HW features";
             this.TabPageHwFeatures.UseVisualStyleBackColor = true;
+            // 
+            // ListViewHwFeatures
+            // 
+            this.ListViewHwFeatures.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewHwFeatures.ContextMenuStrip = this.ContextMenuHwFeatures;
+            this.ListViewHwFeatures.FullRowSelect = true;
+            this.ListViewHwFeatures.HideSelection = false;
+            this.ListViewHwFeatures.Location = new System.Drawing.Point(13, 26);
+            this.ListViewHwFeatures.Name = "ListViewHwFeatures";
+            this.ListViewHwFeatures.Size = new System.Drawing.Size(724, 324);
+            this.ListViewHwFeatures.Sortable = true;
+            this.ListViewHwFeatures.TabIndex = 1;
+            this.ListViewHwFeatures.UseCompatibleStateImageBehavior = false;
+            this.ListViewHwFeatures.View = System.Windows.Forms.View.Details;
             // 
             // ContextMenuHwFeatures
             // 
@@ -875,6 +928,22 @@ namespace Net.Pkcs11Admin.WinForms
             this.TabPageDataObjects.Text = "Data objects";
             this.TabPageDataObjects.UseVisualStyleBackColor = true;
             // 
+            // ListViewDataObjects
+            // 
+            this.ListViewDataObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewDataObjects.ContextMenuStrip = this.ContextMenuDataObjects;
+            this.ListViewDataObjects.FullRowSelect = true;
+            this.ListViewDataObjects.HideSelection = false;
+            this.ListViewDataObjects.Location = new System.Drawing.Point(13, 26);
+            this.ListViewDataObjects.Name = "ListViewDataObjects";
+            this.ListViewDataObjects.Size = new System.Drawing.Size(724, 324);
+            this.ListViewDataObjects.Sortable = true;
+            this.ListViewDataObjects.TabIndex = 1;
+            this.ListViewDataObjects.UseCompatibleStateImageBehavior = false;
+            this.ListViewDataObjects.View = System.Windows.Forms.View.Details;
+            // 
             // ContextMenuDataObjects
             // 
             this.ContextMenuDataObjects.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -886,11 +955,12 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemDataObjectsExport,
             this.CtxMenuItemDataObjectsPkcs11Uri,
             this.CtxMenuItemDataObjectsCsvAll,
-            this.CtxMenuItemDataObjectsCsvSelected});
+            this.CtxMenuItemDataObjectsCsvSelected,
+            this.CtxMenuItemDataObjectsRefresh});
             this.ContextMenuDataObjects.Name = "ContextMenuDataObjects";
             this.ContextMenuDataObjects.ShowImageMargin = false;
             this.ContextMenuDataObjects.ShowItemToolTips = false;
-            this.ContextMenuDataObjects.Size = new System.Drawing.Size(208, 202);
+            this.ContextMenuDataObjects.Size = new System.Drawing.Size(208, 224);
             // 
             // CtxMenuItemDataObjectsView
             // 
@@ -955,6 +1025,13 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemDataObjectsCsvSelected.Text = "Export selected items to CSV...";
             this.CtxMenuItemDataObjectsCsvSelected.Click += new System.EventHandler(this.CtxMenuItemDataObjectsCsvSelected_Click);
             // 
+            // CtxMenuItemDataObjectsRefresh
+            // 
+            this.CtxMenuItemDataObjectsRefresh.Name = "CtxMenuItemDataObjectsRefresh";
+            this.CtxMenuItemDataObjectsRefresh.Size = new System.Drawing.Size(207, 22);
+            this.CtxMenuItemDataObjectsRefresh.Text = "Refresh";
+            this.CtxMenuItemDataObjectsRefresh.Click += new System.EventHandler(this.CtxMenuItemDataObjectsRefresh_Click);
+            // 
             // LabelDataObjects
             // 
             this.LabelDataObjects.AutoSize = true;
@@ -976,6 +1053,22 @@ namespace Net.Pkcs11Admin.WinForms
             this.TabPageCertificates.Text = "Certificates";
             this.TabPageCertificates.UseVisualStyleBackColor = true;
             // 
+            // ListViewCertificates
+            // 
+            this.ListViewCertificates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewCertificates.ContextMenuStrip = this.ContextMenuCertificates;
+            this.ListViewCertificates.FullRowSelect = true;
+            this.ListViewCertificates.HideSelection = false;
+            this.ListViewCertificates.Location = new System.Drawing.Point(13, 26);
+            this.ListViewCertificates.Name = "ListViewCertificates";
+            this.ListViewCertificates.Size = new System.Drawing.Size(724, 324);
+            this.ListViewCertificates.Sortable = true;
+            this.ListViewCertificates.TabIndex = 1;
+            this.ListViewCertificates.UseCompatibleStateImageBehavior = false;
+            this.ListViewCertificates.View = System.Windows.Forms.View.Details;
+            // 
             // ContextMenuCertificates
             // 
             this.ContextMenuCertificates.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -987,11 +1080,12 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemCertificatesPkcs11Uri,
             this.CtxMenuItemCertificatesCsvAll,
             this.CtxMenuItemCertificatesCsvSelected,
-            this.CtxMenuItemCertificatesCheckRoca});
+            this.CtxMenuItemCertificatesCheckRoca,
+            this.CtxMenuItemCertificatesRefresh});
             this.ContextMenuCertificates.Name = "ContextMenuCertificates";
             this.ContextMenuCertificates.ShowImageMargin = false;
             this.ContextMenuCertificates.ShowItemToolTips = false;
-            this.ContextMenuCertificates.Size = new System.Drawing.Size(213, 202);
+            this.ContextMenuCertificates.Size = new System.Drawing.Size(213, 224);
             // 
             // CtxMenuItemCertificatesView
             // 
@@ -1056,6 +1150,13 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemCertificatesCheckRoca.Text = "Check for ROCA vulnerability...";
             this.CtxMenuItemCertificatesCheckRoca.Click += new System.EventHandler(this.CtxMenuItemCertificatesCheckRoca_Click);
             // 
+            // CtxMenuItemCertificatesRefresh
+            // 
+            this.CtxMenuItemCertificatesRefresh.Name = "CtxMenuItemCertificatesRefresh";
+            this.CtxMenuItemCertificatesRefresh.Size = new System.Drawing.Size(212, 22);
+            this.CtxMenuItemCertificatesRefresh.Text = "Refresh";
+            this.CtxMenuItemCertificatesRefresh.Click += new System.EventHandler(this.CtxMenuItemCertificatesRefresh_Click);
+            // 
             // LabelCertificates
             // 
             this.LabelCertificates.AutoSize = true;
@@ -1077,6 +1178,22 @@ namespace Net.Pkcs11Admin.WinForms
             this.TabPageKeys.Text = "Keys";
             this.TabPageKeys.UseVisualStyleBackColor = true;
             // 
+            // ListViewKeys
+            // 
+            this.ListViewKeys.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewKeys.ContextMenuStrip = this.ContextMenuKeys;
+            this.ListViewKeys.FullRowSelect = true;
+            this.ListViewKeys.HideSelection = false;
+            this.ListViewKeys.Location = new System.Drawing.Point(13, 26);
+            this.ListViewKeys.Name = "ListViewKeys";
+            this.ListViewKeys.Size = new System.Drawing.Size(724, 324);
+            this.ListViewKeys.Sortable = true;
+            this.ListViewKeys.TabIndex = 1;
+            this.ListViewKeys.UseCompatibleStateImageBehavior = false;
+            this.ListViewKeys.View = System.Windows.Forms.View.Details;
+            // 
             // ContextMenuKeys
             // 
             this.ContextMenuKeys.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1090,7 +1207,8 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemKeysPkcs11Uri,
             this.CtxMenuItemKeysCsvAll,
             this.CtxMenuItemKeysCsvSelected,
-            this.CtxMenuItemKeysCheckRoca});
+            this.CtxMenuItemKeysCheckRoca,
+            this.CtxMenuItemKeysRefresh});
             this.ContextMenuKeys.Name = "ContextMenuKeys";
             this.ContextMenuKeys.ShowImageMargin = false;
             this.ContextMenuKeys.ShowItemToolTips = false;
@@ -1166,6 +1284,20 @@ namespace Net.Pkcs11Admin.WinForms
             this.CtxMenuItemKeysCsvSelected.Text = "Export selected items to CSV...";
             this.CtxMenuItemKeysCsvSelected.Click += new System.EventHandler(this.CtxMenuItemKeysCsvSelected_Click);
             // 
+            // CtxMenuItemKeysCheckRoca
+            // 
+            this.CtxMenuItemKeysCheckRoca.Name = "CtxMenuItemKeysCheckRoca";
+            this.CtxMenuItemKeysCheckRoca.Size = new System.Drawing.Size(244, 22);
+            this.CtxMenuItemKeysCheckRoca.Text = "Check for ROCA vulnerability...";
+            this.CtxMenuItemKeysCheckRoca.Click += new System.EventHandler(this.CtxMenuItemKeysCheckRoca_Click);
+            // 
+            // CtxMenuItemKeysRefresh
+            // 
+            this.CtxMenuItemKeysRefresh.Name = "CtxMenuItemKeysRefresh";
+            this.CtxMenuItemKeysRefresh.Size = new System.Drawing.Size(244, 22);
+            this.CtxMenuItemKeysRefresh.Text = "Refresh";
+            this.CtxMenuItemKeysRefresh.Click += new System.EventHandler(this.CtxMenuItemKeysRefresh_Click);
+            // 
             // LabelKeys
             // 
             this.LabelKeys.AutoSize = true;
@@ -1186,6 +1318,21 @@ namespace Net.Pkcs11Admin.WinForms
             this.TabPageDomainParams.TabIndex = 8;
             this.TabPageDomainParams.Text = "Domain params";
             this.TabPageDomainParams.UseVisualStyleBackColor = true;
+            // 
+            // ListViewDomainParams
+            // 
+            this.ListViewDomainParams.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewDomainParams.ContextMenuStrip = this.ContextMenuDomainParams;
+            this.ListViewDomainParams.HideSelection = false;
+            this.ListViewDomainParams.Location = new System.Drawing.Point(13, 26);
+            this.ListViewDomainParams.Name = "ListViewDomainParams";
+            this.ListViewDomainParams.Size = new System.Drawing.Size(724, 324);
+            this.ListViewDomainParams.Sortable = true;
+            this.ListViewDomainParams.TabIndex = 1;
+            this.ListViewDomainParams.UseCompatibleStateImageBehavior = false;
+            this.ListViewDomainParams.View = System.Windows.Forms.View.Details;
             // 
             // ContextMenuDomainParams
             // 
@@ -1236,123 +1383,13 @@ namespace Net.Pkcs11Admin.WinForms
             this.LabelDomainParams.TabIndex = 0;
             this.LabelDomainParams.Text = "These domain parameters objects were found:";
             // 
-            // ListViewBasicInfo
+            // MenuItemImportPKCS12
             // 
-            this.ListViewBasicInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewBasicInfo.ContextMenuStrip = this.ContextMenuBasicInfo;
-            this.ListViewBasicInfo.FullRowSelect = true;
-            this.ListViewBasicInfo.HideSelection = false;
-            this.ListViewBasicInfo.Location = new System.Drawing.Point(13, 26);
-            this.ListViewBasicInfo.Name = "ListViewBasicInfo";
-            this.ListViewBasicInfo.Size = new System.Drawing.Size(724, 324);
-            this.ListViewBasicInfo.Sortable = true;
-            this.ListViewBasicInfo.TabIndex = 1;
-            this.ListViewBasicInfo.UseCompatibleStateImageBehavior = false;
-            this.ListViewBasicInfo.View = System.Windows.Forms.View.Details;
-            // 
-            // ListViewMechanisms
-            // 
-            this.ListViewMechanisms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewMechanisms.ContextMenuStrip = this.ContextMenuMechanisms;
-            this.ListViewMechanisms.FullRowSelect = true;
-            this.ListViewMechanisms.HideSelection = false;
-            this.ListViewMechanisms.Location = new System.Drawing.Point(13, 26);
-            this.ListViewMechanisms.Name = "ListViewMechanisms";
-            this.ListViewMechanisms.Size = new System.Drawing.Size(724, 324);
-            this.ListViewMechanisms.Sortable = true;
-            this.ListViewMechanisms.TabIndex = 0;
-            this.ListViewMechanisms.UseCompatibleStateImageBehavior = false;
-            this.ListViewMechanisms.View = System.Windows.Forms.View.Details;
-            // 
-            // ListViewHwFeatures
-            // 
-            this.ListViewHwFeatures.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewHwFeatures.ContextMenuStrip = this.ContextMenuHwFeatures;
-            this.ListViewHwFeatures.FullRowSelect = true;
-            this.ListViewHwFeatures.HideSelection = false;
-            this.ListViewHwFeatures.Location = new System.Drawing.Point(13, 26);
-            this.ListViewHwFeatures.Name = "ListViewHwFeatures";
-            this.ListViewHwFeatures.Size = new System.Drawing.Size(724, 324);
-            this.ListViewHwFeatures.Sortable = true;
-            this.ListViewHwFeatures.TabIndex = 1;
-            this.ListViewHwFeatures.UseCompatibleStateImageBehavior = false;
-            this.ListViewHwFeatures.View = System.Windows.Forms.View.Details;
-            // 
-            // ListViewDataObjects
-            // 
-            this.ListViewDataObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewDataObjects.ContextMenuStrip = this.ContextMenuDataObjects;
-            this.ListViewDataObjects.FullRowSelect = true;
-            this.ListViewDataObjects.HideSelection = false;
-            this.ListViewDataObjects.Location = new System.Drawing.Point(13, 26);
-            this.ListViewDataObjects.Name = "ListViewDataObjects";
-            this.ListViewDataObjects.Size = new System.Drawing.Size(724, 324);
-            this.ListViewDataObjects.Sortable = true;
-            this.ListViewDataObjects.TabIndex = 1;
-            this.ListViewDataObjects.UseCompatibleStateImageBehavior = false;
-            this.ListViewDataObjects.View = System.Windows.Forms.View.Details;
-            // 
-            // ListViewCertificates
-            // 
-            this.ListViewCertificates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewCertificates.ContextMenuStrip = this.ContextMenuCertificates;
-            this.ListViewCertificates.FullRowSelect = true;
-            this.ListViewCertificates.HideSelection = false;
-            this.ListViewCertificates.Location = new System.Drawing.Point(13, 26);
-            this.ListViewCertificates.Name = "ListViewCertificates";
-            this.ListViewCertificates.Size = new System.Drawing.Size(724, 324);
-            this.ListViewCertificates.Sortable = true;
-            this.ListViewCertificates.TabIndex = 1;
-            this.ListViewCertificates.UseCompatibleStateImageBehavior = false;
-            this.ListViewCertificates.View = System.Windows.Forms.View.Details;
-            // 
-            // ListViewKeys
-            // 
-            this.ListViewKeys.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewKeys.ContextMenuStrip = this.ContextMenuKeys;
-            this.ListViewKeys.FullRowSelect = true;
-            this.ListViewKeys.HideSelection = false;
-            this.ListViewKeys.Location = new System.Drawing.Point(13, 26);
-            this.ListViewKeys.Name = "ListViewKeys";
-            this.ListViewKeys.Size = new System.Drawing.Size(724, 324);
-            this.ListViewKeys.Sortable = true;
-            this.ListViewKeys.TabIndex = 1;
-            this.ListViewKeys.UseCompatibleStateImageBehavior = false;
-            this.ListViewKeys.View = System.Windows.Forms.View.Details;
-            // 
-            // ListViewDomainParams
-            // 
-            this.ListViewDomainParams.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewDomainParams.ContextMenuStrip = this.ContextMenuDomainParams;
-            this.ListViewDomainParams.HideSelection = false;
-            this.ListViewDomainParams.Location = new System.Drawing.Point(13, 26);
-            this.ListViewDomainParams.Name = "ListViewDomainParams";
-            this.ListViewDomainParams.Size = new System.Drawing.Size(724, 324);
-            this.ListViewDomainParams.Sortable = true;
-            this.ListViewDomainParams.TabIndex = 1;
-            this.ListViewDomainParams.UseCompatibleStateImageBehavior = false;
-            this.ListViewDomainParams.View = System.Windows.Forms.View.Details;
-            // 
-            // CtxMenuItemKeysCheckRoca
-            // 
-            this.CtxMenuItemKeysCheckRoca.Name = "CtxMenuItemKeysCheckRoca";
-            this.CtxMenuItemKeysCheckRoca.Size = new System.Drawing.Size(244, 22);
-            this.CtxMenuItemKeysCheckRoca.Text = "Check for ROCA vulnerability...";
-            this.CtxMenuItemKeysCheckRoca.Click += new System.EventHandler(this.CtxMenuItemKeysCheckRoca_Click);
+            this.MenuItemImportPKCS12.Enabled = false;
+            this.MenuItemImportPKCS12.Name = "MenuItemImportPKCS12";
+            this.MenuItemImportPKCS12.Size = new System.Drawing.Size(172, 22);
+            this.MenuItemImportPKCS12.Text = "Import PKCS#12";
+            this.MenuItemImportPKCS12.Click += new System.EventHandler(this.MenuItemImportPKCS12_Click);
             // 
             // MainForm
             // 
@@ -1535,5 +1572,9 @@ namespace Net.Pkcs11Admin.WinForms
         private System.Windows.Forms.ToolStripMenuItem CtxMenuItemDomainParamsDelete;
         private System.Windows.Forms.ToolStripMenuItem CtxMenuItemCertificatesCheckRoca;
         private System.Windows.Forms.ToolStripMenuItem CtxMenuItemKeysCheckRoca;
+        private System.Windows.Forms.ToolStripMenuItem CtxMenuItemDataObjectsRefresh;
+        private System.Windows.Forms.ToolStripMenuItem CtxMenuItemCertificatesRefresh;
+        private System.Windows.Forms.ToolStripMenuItem CtxMenuItemKeysRefresh;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemImportPKCS12;
     }
 }
